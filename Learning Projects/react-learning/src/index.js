@@ -4,12 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Gallery from './ImportAndExport/Gallery';
+import Parent from './PaasingProps/ParentComponent';
+import Profile from './PaasingProps/Profile';
+import PassingJSX from './PaasingProps/PassingJSX';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
-    <Gallery />
+    {/* <App />
+    <Gallery /> */}
+
+    <Parent />
+    {/* <Profile /> */}
+    {/* <PassingJSX /> */}
   </React.StrictMode>
 );
 

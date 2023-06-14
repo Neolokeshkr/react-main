@@ -8,8 +8,8 @@
 //         Syntax: 
             const element = createElement(type, props, ...children)
 
-        // Example:
-        const reactElement = React.createElement('h1', {id:'name'}, "Lokesh");
+            // Example:
+            const reactElement = React.createElement('h1', {id:'name'}, "Lokesh");
 
     // React Component 
     //     1. Component can be class or functional that optionally takes input and returns an element. 
@@ -51,7 +51,7 @@
                 // 1.3 You can’t return two objects from a function without wrapping them into an array. This explains why you also can’t return two JSX tags without wrapping them into another tag or a Fragment.
              
             // 2. Close all the tags
-                // 2.1 JSX requires to be explicitly closed: self closing <img/> must become <img>.</img> and wrapping tags like <li>oranges must become <li>oranges</li>
+                // 2.1 JSX requires to be explicitly closed: self closing <img> must become <img/> and wrapping tags like <li>oranges must become <li>oranges</li>
 
             // 3. camelCase all most of the things! 
                 // 3.1 JSX turns into JavaScript and attributes written in JSX become keys of JavaScript objects.
@@ -59,5 +59,45 @@
                 // 3.2 Attributes like : stroke-width becomes stroeWidth and class becomes className
 
 // 5.   JavaScript in JSX with Curly Braces
-        // 
+        // 5.1 Passing strings with quotes:
+            // When you want to pass a string attribute to JSX, you put it in single or double quotes:
+            // To dynamically specify the src or alt text? You could use a value from JavaScript by replacing " and " with { and }
+            // To pass objects in JSX, we need to wrap the object in another pair of curly braces -> {{name:'Lokesh'}}
+                export default function Avatar(){
+                    const avatar = 'https://i.imgur.com/7vQD0fPs.jpg';
+                    return(
+                        <div>
+                            <img
+                                className="avatar"                      //string attribute passed to className
+                                src={avatar}                            //js variable attribute passed to src
+                                alt="Gregorio Y. Zara"                  //string attribute passed to alt
+                                style={{
+                                    // style object passed in {{}}
+                                        border: '1px solid red',
+                                        backgroundColor: 'black'
+                                    }}       
+                            />
+                        </div>
+                    )
+                }
+
+// 6. Passing props to a component
+    // React components props to communicate with each other.
+    // Every parent component can pass information to its child component by giving them props.
+    // A component may receive different props over time, props are not static but they are imulateble.
+    // One shouldnot change the props explictily they must be updated using the setState()
+    // You can forward all props with <Avatar {...props} /> JSX spread syntax, but don’t overuse it!
+    // Nested JSX like <Card><Avatar /></Card> will appear as Card component’s children prop.
+
+    // Destructuring
+        function Component({person = 'defaultValue', age}) {}
+        // the above is eqvuivalent to 
+        /* 
+        function Component(props)(){
+            let person = props.person
+            let age = props.age
+        } 
+        */
+    
+    
 
