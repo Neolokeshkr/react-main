@@ -99,5 +99,11 @@
         } 
         */
     
-    
+// Conditional rendering
 
+
+// How to reduce code logic
+// 1. Check if you are repeating code {DRY - Don't repeat yourself}
+// 2. Stop putting unnecessary logic - {Make code simpler}
+// 3. See if you are repeating variables in logic.
+    
