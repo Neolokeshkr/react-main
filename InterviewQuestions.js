@@ -100,10 +100,36 @@
         */
     
 // Conditional rendering
-
+        // In JSX, {cond ? <A /> : <B />} means “if cond, render <A />, otherwise <B />”.
+        // In JSX, {cond && <A />} means “if cond, render <A />, otherwise nothing”.
 
 // How to reduce code logic
-// 1. Check if you are repeating code {DRY - Don't repeat yourself}
-// 2. Stop putting unnecessary logic - {Make code simpler}
-// 3. See if you are repeating variables in logic.
+    // 1. Check if you are repeating code {DRY - Don't repeat yourself}
+    // 2. Stop putting unnecessary logic - {Make code simpler}
+    // 3. See if you are repeating variables in logic.
+
+// Rendering Lists
+    // Keeping list items in order with key Keeping list items in order with key 
+        // 1. You need to give each array item a key — a string or a number that uniquely identifies it among other items in that array:
+            <li key={person.id}>...</li>
+
+        // 2. Keys tell React which array item each component corresponds to, so that it can match them up later. This becomes important if your array items can move (e.g. due to sorting), get inserted, or get deleted. A well-chosen key helps React infer what exactly has happened, and make the correct updates to the DOM tree.
+
+        // 3. Rather than generating keys on the fly, you should include them in your data:
+
+        // 4. You might be tempted to use an item’s index in the array as its key. In fact, that’s what React will use if you don’t specify a key at all. But the order in which you render items will change over time if an item is inserted, deleted, or if the array gets reordered. Index as a key often leads to subtle and confusing bugs.
+
+    // Displaying several DOM nodes for each list item
+        // The short <>...</> Fragment syntax won’t let you pass a key, so you need to either group them into a single <div>, or use the slightly longer and more explicit <Fragment> syntax:
+
+            import { Fragment } from 'react';
+
+            const listItems = people.map(person =>
+              <Fragment key={person.id}>
+                <h1>{person.name}</h1>
+                <p>{person.bio}</p>
+              </Fragment>
+            );
+
+        // Fragments disappear from the DOM, so this will produce a flat list of <h1>, <p>, <h1>, <p>, and so on.
     

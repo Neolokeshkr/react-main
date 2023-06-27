@@ -7,6 +7,7 @@ import Gallery from './ImportAndExport/Gallery';
 import Parent from './PaasingProps/ParentComponent';
 import Profile from './PaasingProps/Profile';
 import PassingJSX from './PaasingProps/PassingJSX';
+import PeopleList from './RenderingLists/PeopleList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,9 +15,10 @@ root.render(
     {/* <App />
     <Gallery /> */}
 
-    <Parent />
+    {/* <Parent /> */}
     {/* <Profile /> */}
     {/* <PassingJSX /> */}
+    <PeopleList />
   </React.StrictMode>
 );
 
