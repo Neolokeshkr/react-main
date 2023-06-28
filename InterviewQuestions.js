@@ -133,3 +133,19 @@
 
         // Fragments disappear from the DOM, so this will produce a flat list of <h1>, <p>, <h1>, <p>, and so on.
     
+// Keeping Components Pure
+
+    // A pure function is a function with the following characteristics:
+        // 1. It minds its own business. It does not change any objects or variables that existed before it was called.
+        // 2. Same inputs, same output. Given the same inputs, a pure function should always return the same result.
+        // Example:
+            function double(number){
+                return 2 * number;
+            }
+    
+    // React is designed around this concept. React assumes that every component you write is a pure function. This means that React components you write must always return the same JSX given the same inputs:
+
+    // Detecting impure calculations with StrictMode 
+            // 1. In React there are three kinds of inputs that you can read while rendering: props, state, and context.
+            // 2. You should always treat these inputs as read-only.
+            // 3. When you want to change something in response to user input, you should set state instead of writing to a variable. You should never change preexisting variables or objects while your component is rendering.
