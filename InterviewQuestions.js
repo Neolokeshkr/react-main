@@ -149,3 +149,10 @@
             // 1. In React there are three kinds of inputs that you can read while rendering: props, state, and context.
             // 2. You should always treat these inputs as read-only.
             // 3. When you want to change something in response to user input, you should set state instead of writing to a variable. You should never change preexisting variables or objects while your component is rendering.
+
+            // React offers a “Strict Mode” in which it calls each component’s function twice during development. By calling the component functions twice, Strict Mode helps find components that break these rules.
+
+            // Strict Mode has no effect in production, so it won’t slow down the app for your users. To opt into Strict Mode, you can wrap your root component into <React.StrictMode>. Some frameworks do this by default.
+
+            // Local mutation: Your component’s little secret:
+                // it’s completely fine to change variables and objects that you’ve just created while rendering.
