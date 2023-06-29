@@ -82,7 +82,7 @@
                 }
 
 // 6. Passing props to a component
-    // React components props to communicate with each other.
+    // React components pass props to communicate with each other.
     // Every parent component can pass information to its child component by giving them props.
     // A component may receive different props over time, props are not static but they are imulateble.
     // One shouldnot change the props explictily they must be updated using the setState()
@@ -156,3 +156,83 @@
 
             // Local mutation: Your component’s little secret:
                 // it’s completely fine to change variables and objects that you’ve just created while rendering.
+
+// -------------------- ADDING INTERACTIVITY -----------------------------------------------
+
+    // Responding to Events
+        // 1. React lets you add event handlers to your JSX.
+        // 2. Event handlers are your own functions that will be triggered in response to interactions like clicking, hovering, focusing form inputs, and so on.
+
+        // Adding Event Handlers
+            // 1. To add an event handler, you will first define a function and then pass it as a prop to the appropriate JSX tag. For example:
+              export default function Button() {
+                  function handleClick() {
+                    alert('You clicked me!');
+                  }
+                
+                  return (
+                    <button onClick={handleClick}>
+                      Click me
+                    </button>
+                  );
+                }
+
+            // 2. You defined the handleClick function and then passed it as a prop to <button>.  handleClick is an event handler. Event handler functions:
+                // 2.1 Are usually defined inside your components.
+                // 2.2 Have names that start with handle, followed by the name of the event.
+
+                // SEE CODE in EventHandlers.js file for Better Understanding
+
+        // Event propagation 
+                // Event handlers will also catch events from any children your component might have. We say that an event “bubbles” or “propagates” up the tree: it starts with where the event happened, and then goes up the tree.
+              
+                export default function Toolbar() {
+                    return (
+                      <div className="Toolbar" onClick={() => {
+                        alert('You clicked on the toolbar!');
+                      }}>
+                        <button onClick={() => alert('Playing!')}>
+                          Play Movie
+                        </button>
+                        <button onClick={() => alert('Uploading!')}>
+                          Upload Image
+                        </button>
+                      </div>
+                    );
+                  }
+                //   If you click on either button, its onClick will run first, followed by the parent <div>’s onClick. So two messages will appear. If you click the toolbar itself, only the parent <div>’s onClick will run.
+                
+                  // All events propagate in React except onScroll, which only works on the JSX tag you attach it to.
+                  
+        // Stopping propagation 
+            // 1. Event handlers receive an event object as their only argument. By convention, it’s usually called e, which stands for “event”. You can use this object to read information about the event.
+            // 2. That event object also lets you stop the propagation. If you want to prevent an event from reaching parent components, you need to call e.stopPropagation() like this Button component does:
+
+                function Button({ onClick, children }) {
+                    return (
+                      <button onClick={e => {
+                        e.stopPropagation();
+                        onClick();
+                      }}>
+                        {children}
+                      </button>
+                    );
+                }
+
+        // Preventing default behavior 
+            //   Some browser events have default behavior associated with them. For example, a <form> submit event, which happens when a button inside of it is clicked, will reload the whole page by default:
+                export default function Signup() {
+                    return (
+                      <form onSubmit={e => {
+                        e.preventDefault();
+                        alert('Submitting!');
+                      }}>
+                        <input />
+                        <button>Send</button>
+                      </form>
+                    );
+                }
+                
+        // Don’t confuse e.stopPropagation() and e.preventDefault(). They are both useful, but are unrelated:
+        // e.stopPropagation() stops the event handlers attached to the tags above from firing.
+        // e.preventDefault() prevents the default browser behavior for the few events that have it.
