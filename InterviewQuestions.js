@@ -236,3 +236,13 @@
         // Don’t confuse e.stopPropagation() and e.preventDefault(). They are both useful, but are unrelated:
         // e.stopPropagation() stops the event handlers attached to the tags above from firing.
         // e.preventDefault() prevents the default browser behavior for the few events that have it.
+
+// State: a component’s memory 
+    // 1. In React, component-specific memory is called state.
+    // 2. You can add state to a component with a useState Hook. Hooks are special functions that let your components use React features (state is one of those features).
+    // 3. The useState Hook lets you declare a state variable. It takes the initial state and returns a pair of values: the current state, and a state setter function that lets you update it.
+
+        const [index, setIndex] = useState(0);
+        const [showMore, setShowMore] = useState(false);
+
+        

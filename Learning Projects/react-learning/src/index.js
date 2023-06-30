@@ -8,7 +8,8 @@ import './index.css';
 // import Profile from './PaasingProps/Profile';
 // import PassingJSX from './PaasingProps/PassingJSX';
 // import PeopleList from './RenderingLists/PeopleList';
-import {EventHandlers, Toolbar, PassingEventhandlersAsProps, EventPropagation} from './AddingInteractivity/EventHandlers';
+// import {EventHandlers, Toolbar, PassingEventhandlersAsProps, EventPropagation} from './AddingInteractivity/EventHandlers';
+import SculptureGallery from './AddingInteractivity/ComponentWithState';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,7 +25,7 @@ root.render(
     {/* <EventHandlers /> */}
     {/* <Toolbar /> */}
     {/* <PassingEventhandlersAsProps /> */}
-    <EventPropagation />
+    <SculptureGallery />
   </React.StrictMode>
 );
 
