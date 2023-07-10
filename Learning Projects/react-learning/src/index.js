@@ -26,6 +26,7 @@ root.render(
     {/* <Toolbar /> */}
     {/* <PassingEventhandlersAsProps /> */}
     <SculptureGallery />
+    <SculptureGallery />
   </React.StrictMode>
 );
 
