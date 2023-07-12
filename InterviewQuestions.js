@@ -275,7 +275,10 @@
 
     // State is isolated and private 
       // 1. State is local to a component instance on the screen. In other words, if you render the same component twice, each copy will have completely isolated state! Changing one of them will not affect the other.
+      // 2. Unlike props, state is fully private to the component declaring it. 
 
+  // Q. How to share stare between two components?
+  // A. The right way to do it in React is to remove state from child components and add it to their closest shared parent.
 
 
       
