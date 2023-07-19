@@ -16,3 +16,6 @@
 
 // Wrapping the App component in Router Provider
 
+// Vite 
+    //  npm create vite@latest my-vue-app -- --template vue
+    //  npm create vite@latest my-react-app -- --template react
