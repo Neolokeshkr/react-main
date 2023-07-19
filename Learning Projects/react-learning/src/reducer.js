@@ -1,0 +1,18 @@
+// Create the reducer functions in a separate file (e.g., reducers.js):
+
+const initialState = {
+    counter : 0
+}
+
+const rootReducer = (state = initialState, action) => {
+    switch(action.type) {
+        case 'INCREMENT' :
+            return { ...state, counter : state.counter + 1};
+        case 'DECREMENT' :
+            return { ...state, counter : state.counter - 1};
+        default:
+            return state;
+    }
+};
+
+export default rootReducer;

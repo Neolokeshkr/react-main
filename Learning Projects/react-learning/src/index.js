@@ -1,6 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+
+// import { legacy_createStore as createStore} from 'redux'
+// import { Provider } from 'react-redux';
+// import rootReducer from './reducer';
+// import Counter from './ReduxComponent/Counter';
+
+// const store = createStore(rootReducer);
+
+
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
 // import Gallery from './ImportAndExport/Gallery';
@@ -9,12 +18,18 @@ import './index.css';
 // import PassingJSX from './PaasingProps/PassingJSX';
 // import PeopleList from './RenderingLists/PeopleList';
 // import {EventHandlers, Toolbar, PassingEventhandlersAsProps, EventPropagation} from './AddingInteractivity/EventHandlers';
-import SculptureGallery from './AddingInteractivity/ComponentWithState';
+// import SculptureGallery from './AddingInteractivity/ComponentWithState';
+import Counter from './QueuingStateUpdates/Counter';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+
+    {/* <Provider store={store}>
+      <Counter />
+    </Provider>, */}
+
     {/* <App />
     <Gallery /> */}
 
@@ -25,8 +40,11 @@ root.render(
     {/* <EventHandlers /> */}
     {/* <Toolbar /> */}
     {/* <PassingEventhandlersAsProps /> */}
-    <SculptureGallery />
-    <SculptureGallery />
+    {/* <SculptureGallery />
+    <SculptureGallery /> */}
+
+    <Counter />
+    
   </React.StrictMode>
 );
 
