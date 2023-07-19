@@ -341,3 +341,26 @@
               // Setting state does not change the variable in the existing render, but it requests a new render.
               // React processes state updates after event handlers have finished running. This is called batching.
               // To update some state multiple times in one event, you can use setNumber(n => n + 1) updater function.
+
+// Updating Objects in State
+
+      // State can hold any kind of JavaScript value, including objects. But you shouldn’t change objects that you hold in the React state directly. Instead, when you want to update an object, you need to create a new one (or make a copy of an existing one), and then set the state to use that copy.
+      // So far you’ve been working with numbers, strings, and booleans. These kinds of JavaScript values are “immutable”, meaning unchangeable or “read-only”. You can trigger a re-render to replace a value:
+      // The x state changed from 0 to 5, but the number 0 itself did not change. It’s not possible to make any changes to the built-in primitive values like numbers, strings, and booleans in JavaScript.
+      // However, although objects in React state are technically mutable, you should treat them as if they were immutable—like numbers, booleans, and strings. Instead of mutating them, you should always replace them.
+
+       // SEE UpdatingObjectsInState dir in src/
+
+      const [person, setPerson] = useState({
+        firstName: 'Barbara',
+        lastName: 'Hepworth',
+        email: 'bhepworth@sculpture.com'
+      });
+
+      // You can use the ... object spread syntax so that you don’t need to copy every property separately.
+        setPerson({
+          ...person, // Copy the old fields
+          firstName: e.target.value // But override this one
+        });
+
+     

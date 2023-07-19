@@ -19,7 +19,9 @@ import './index.css';
 // import PeopleList from './RenderingLists/PeopleList';
 // import {EventHandlers, Toolbar, PassingEventhandlersAsProps, EventPropagation} from './AddingInteractivity/EventHandlers';
 // import SculptureGallery from './AddingInteractivity/ComponentWithState';
-import Counter from './QueuingStateUpdates/Counter';
+// import Counter from './QueuingStateUpdates/Counter';
+import Pointer from './UpdatingObjectsInState/PointerMove';
+import SpreadSyntax from './UpdatingObjectsInState/SpreadSyntax';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -43,7 +45,10 @@ root.render(
     {/* <SculptureGallery />
     <SculptureGallery /> */}
 
-    <Counter />
+    {/* <Counter /> */}
+    {/* <Pointer /> */}
+    <SpreadSyntax />
+
     
   </React.StrictMode>
 );
