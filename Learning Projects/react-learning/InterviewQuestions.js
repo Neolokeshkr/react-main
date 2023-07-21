@@ -354,7 +354,11 @@
       const [person, setPerson] = useState({
         firstName: 'Barbara',
         lastName: 'Hepworth',
-        email: 'bhepworth@sculpture.com'
+        email: 'bhepworth@sculpture.com',
+        address: {
+          addLine1: 'Sant Nagar',
+          addLine2: 'Burari',
+        }
       });
 
       // You can use the ... object spread syntax so that you don’t need to copy every property separately.
@@ -363,4 +367,27 @@
           firstName: e.target.value // But override this one
         });
 
-     
+      // Setting State for nested objects
+      // Spread syntax is shallow: it only copies one level deep.
+      // To update a nested object, you need to create copies all the way up from the place you’re updating.
+      // To reduce repetitive copying code, use Immer.
+      setPerson({
+        ...person,
+        address:{
+          ...person.address,
+          addLine1 : e.target.value,
+          addLine2 : e.target.value,
+        }
+      })
+
+// Setting state with immer
+  // To try Immer:
+    // Run npm install use-immer to add Immer as a dependency
+    // Then replace import { useState } from 'react' with import { useImmer } from 'use-immer'
+
+    // The draft provided by Immer is a special type of object, called a Proxy, that “records” what you do with it. This is why you can mutate it freely as much as you like! Under the hood, Immer figures out which parts of the draft have been changed, and produces a completely new object that contains your edits.
+
+    //Update Logic using Immer 
+      updatePerson(draft => {
+        draft.artwork.city = 'Lagos';
+      });

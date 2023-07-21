@@ -20,8 +20,9 @@ import './index.css';
 // import {EventHandlers, Toolbar, PassingEventhandlersAsProps, EventPropagation} from './AddingInteractivity/EventHandlers';
 // import SculptureGallery from './AddingInteractivity/ComponentWithState';
 // import Counter from './QueuingStateUpdates/Counter';
-import Pointer from './UpdatingObjectsInState/PointerMove';
-import SpreadSyntax from './UpdatingObjectsInState/SpreadSyntax';
+// import Pointer from './UpdatingObjectsInState/PointerMove';
+// import SpreadSyntax from './UpdatingObjectsInState/SpreadSyntax';
+import ImmerComponent from './UpdatingObjectsInState/Immer';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -47,7 +48,8 @@ root.render(
 
     {/* <Counter /> */}
     {/* <Pointer /> */}
-    <SpreadSyntax />
+    {/* <SpreadSyntax /> */}
+    <ImmerComponent />
 
     
   </React.StrictMode>
