@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+// import TransformArray from './UpdatingStateInArrays/TranformArray';
+// import ReplaceArray from './UpdatingStateInArrays/ReplaceArray';
+// import InsertInToArray from './UpdatingStateInArrays/InsertInToArray';
+import BucketList from './UpdatingStateInArrays/UpdatingObjectsInsideArray';
 
 // import { legacy_createStore as createStore} from 'redux'
 // import { Provider } from 'react-redux';
@@ -22,7 +26,8 @@ import './index.css';
 // import Counter from './QueuingStateUpdates/Counter';
 // import Pointer from './UpdatingObjectsInState/PointerMove';
 // import SpreadSyntax from './UpdatingObjectsInState/SpreadSyntax';
-import ImmerComponent from './UpdatingObjectsInState/Immer';
+// import ImmerComponent from './UpdatingObjectsInState/Immer';
+// import ArrayStateComponent from './UpdatingStateInArrays/ArrayStateComponent';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -49,7 +54,12 @@ root.render(
     {/* <Counter /> */}
     {/* <Pointer /> */}
     {/* <SpreadSyntax /> */}
-    <ImmerComponent />
+    {/* <ImmerComponent /> */}
+    {/* <ArrayStateComponent /> */}
+    {/* <TransformArray /> */}
+    {/* <ReplaceArray /> */}
+    {/* <InsertInToArray children={'Inspiring sculptors'}/> */}
+    <BucketList heading={'Art Bucket List'} subHeading={'list of art to see:'}/>
 
     
   </React.StrictMode>

@@ -391,3 +391,33 @@
       updatePerson(draft => {
         draft.artwork.city = 'Lagos';
       });
+
+// Updating arrays without mutation 
+  // In JavaScript, arrays are just another kind of object. Like with objects, you should treat arrays in React state as read-only. This means that you shouldn’t reassign items inside an array like arr[0] = 'bird', and you also shouldn’t use methods that mutate the array, such as push() and pop().
+      // 
+  // Instead, every time you want to update an array, you’ll want to pass a new array to your state setting function. To do that, you can create a new array from the original array in your state by calling its non-mutating methods like filter() and map(). Then you can set your state to the resulting new array.                            
+
+  // Example:
+    setArtists([
+      ...artists,
+      { id: nextId++, name: name }
+    ]);
+
+    // The array spread syntax also lets you prepend an item by placing it before the original ...artists:
+      setArtists([
+        { id: nextId++, name: name },
+        ...artists // Put old items at the end
+      ]);
+
+//Making other changes to an array 
+  // There are some things you can’t do with the spread syntax and non-mutating methods like map() and filter() alone. For example, you may want to reverse or sort an array. The JavaScript reverse() and sort() methods are mutating the original array, so you can’t use them directly.
+
+// Write concise update logic with Immer 
+    // Updating nested arrays without mutation can get a little bit repetitive. Just as with objects:
+    // Generally, you shouldn’t need to update state more than a couple of levels deep. If your state objects are very deep, you might want to restructure them differently so that they are flat.
+    // If you don’t want to change your state structure, you might prefer to use Immer, which lets you write using the convenient but mutating syntax and takes care of producing the copies for you.
+
+          updateMyTodos(draft => {
+            const artwork = draft.find(a => a.id === artworkId);
+            artwork.seen = nextSeen;
+          });
