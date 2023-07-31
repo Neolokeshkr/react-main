@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import MailClient from './ManagingState-Intermediate/FixthedisappearingselectionChallange';
+import Accordion from './SharingStateBetweenComponents/Accordion';
+// import MailClient from './ManagingState-Intermediate/FixthedisappearingselectionChallange';
 // import TravelPlan from './ManagingState-Intermediate/AvoidDeeplyNestesState';
 // import Menu from './ManagingState-Intermediate/DuplicationInSTates';
 // import Feedback from './ManagingState-Intermediate/PretendingNetworkCall';
@@ -73,7 +74,8 @@ root.render(
     {/* <Feedback children={'Venizia'}/> */}
     {/* <Menu /> */}
     {/* <TravelPlan /> */}
-    <MailClient />
+    {/* <MailClient /> */}
+    <Accordion />
     
   </React.StrictMode>
 );

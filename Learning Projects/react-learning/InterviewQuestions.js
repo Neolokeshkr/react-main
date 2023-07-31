@@ -449,3 +449,28 @@
   // Don’t put props into state unless you specifically want to prevent updates.
   // For UI patterns like selection, keep ID or index in state instead of the object itself.
   // If updating deeply nested state is complicated, try flattening it.
+
+/* ================================================================================================================================== */
+
+
+// Sharing State Between Components
+  // Sometimes, you want the state of two components to always change together. To do it, remove state from both of them, move it to their closest common parent, and then pass it down to them via props. This is known as lifting state up, and it’s one of the most common things you will do writing React code.
+
+  // Lifting State Up
+    // Remove state from the child components.
+    // Pass hardcoded data from the common parent.
+    // Add state to the common parent and pass it down together with the event handlers.
+
+// Controlled and uncontrolled components 
+  // It is common to call a component with some local state “uncontrolled”. 
+  // In contrast, you might say a component is “controlled” when the important information in it is driven by props rather than its own local state. \
+
+  // Uncontrolled components are easier to use within their parents because they require less configuration. But they’re less flexible when you want to coordinate them together. Controlled components are maximally flexible, but they require the parent components to fully configure them with props.
+
+  // When writing a component, consider which information in it should be controlled (via props), and which information should be uncontrolled (via state). But you can always change your mind and refactor later.
+
+  // Recap
+      // When you want to coordinate two components, move their state to their common parent.
+      // Then pass the information down through props from their common parent.
+      // Finally, pass the event handlers down so that the children can change the parent’s state.
+      // It’s useful to consider components as “controlled” (driven by props) or “uncontrolled” (driven by state).
