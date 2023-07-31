@@ -421,3 +421,31 @@
             const artwork = draft.find(a => a.id === artworkId);
             artwork.seen = nextSeen;
           });
+
+// MANAGAING STATES
+    // Two type of UI Interactions:
+          // 1. Imperative - commanding each element 
+          // 2. Declerative
+
+          // Manipulating the UI imperatively works well enough for isolated examples, but it gets exponentially more difficult to manage in more complex systems. Imagine updating a page full of different forms like this one. Adding a new UI element or a new interaction would require carefully checking all existing code to make sure you haven’t introduced a bug (for example, forgetting to show or hide something).
+
+          // Declarative programming means describing the UI for each visual state rather than micromanaging the UI (imperative).
+          // When developing a component:
+            // Identify all its visual states.
+            // Determine the human and computer triggers for state changes.
+            // Model the state with useState.
+            // // Remove non-essential state to avoid bugs and paradoxes.
+            // Connect the event handlers to set state.  
+
+// Avoid deeply nested state 
+    // If the state is too nested to update easily, consider making it “flat”.
+    // Here is one way you can restructure this data. Instead of a tree-like structure where each place has an array of its child places, you can have each place hold an array of its child place IDs.
+            
+// Chhosing STate Structure
+  // If two state variables always update together, consider merging them into one.
+  // Choose your state variables carefully to avoid creating “impossible” states.
+  // Structure your state in a way that reduces the chances that you’ll make a mistake updating it.
+  // Avoid redundant and duplicate state so that you don’t need to keep it in sync.
+  // Don’t put props into state unless you specifically want to prevent updates.
+  // For UI patterns like selection, keep ID or index in state instead of the object itself.
+  // If updating deeply nested state is complicated, try flattening it.

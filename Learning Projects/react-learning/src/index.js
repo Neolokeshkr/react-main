@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import MailClient from './ManagingState-Intermediate/FixthedisappearingselectionChallange';
+// import TravelPlan from './ManagingState-Intermediate/AvoidDeeplyNestesState';
+// import Menu from './ManagingState-Intermediate/DuplicationInSTates';
+// import Feedback from './ManagingState-Intermediate/PretendingNetworkCall';
 // import TransformArray from './UpdatingStateInArrays/TranformArray';
 // import ReplaceArray from './UpdatingStateInArrays/ReplaceArray';
 // import InsertInToArray from './UpdatingStateInArrays/InsertInToArray';
-import BucketList from './UpdatingStateInArrays/UpdatingObjectsInsideArray';
+// import BucketList from './UpdatingStateInArrays/UpdatingObjectsInsideArray';
+// import CityQuiz from './ManagingState-Intermediate/ReactingToInputWithState';
+// import PointerMove from './ManagingState-Intermediate/ChoosingStateStructure';
 
 // import { legacy_createStore as createStore} from 'redux'
 // import { Provider } from 'react-redux';
@@ -59,8 +65,15 @@ root.render(
     {/* <TransformArray /> */}
     {/* <ReplaceArray /> */}
     {/* <InsertInToArray children={'Inspiring sculptors'}/> */}
-    <BucketList heading={'Art Bucket List'} subHeading={'list of art to see:'}/>
+    {/* <BucketList heading={'Art Bucket List'} subHeading={'list of art to see:'}/> */}
 
+    {/* INTERMEDIATE REACT MANGING STATE */}
+    {/* <CityQuiz children={'City Quiz'} /> */}
+    {/* <PointerMove /> */}
+    {/* <Feedback children={'Venizia'}/> */}
+    {/* <Menu /> */}
+    {/* <TravelPlan /> */}
+    <MailClient />
     
   </React.StrictMode>
 );
