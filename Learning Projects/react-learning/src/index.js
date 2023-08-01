@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Accordion from './SharingStateBetweenComponents/Accordion';
+import PreservingState from './PreservingAndResettingState_ManagingState/PreservingState';
+// import Accordion from './SharingStateBetweenComponents/Accordion';
 // import MailClient from './ManagingState-Intermediate/FixthedisappearingselectionChallange';
 // import TravelPlan from './ManagingState-Intermediate/AvoidDeeplyNestesState';
 // import Menu from './ManagingState-Intermediate/DuplicationInSTates';
@@ -75,7 +76,8 @@ root.render(
     {/* <Menu /> */}
     {/* <TravelPlan /> */}
     {/* <MailClient /> */}
-    <Accordion />
+    {/* <Accordion /> */}
+    <PreservingState />
     
   </React.StrictMode>
 );

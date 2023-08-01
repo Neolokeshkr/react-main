@@ -474,3 +474,40 @@
       // Then pass the information down through props from their common parent.
       // Finally, pass the event handlers down so that the children can change the parent’s state.
       // It’s useful to consider components as “controlled” (driven by props) or “uncontrolled” (driven by state).
+
+/* ================================================================================================================================== */
+
+// Preserving and Resetting State
+
+    // State is isolated between components. React keeps track of which state belongs to which component based on their place in the UI tree. You can control when to preserve state and when to reset it between re-renders.
+
+    // Browsers use many tree structures to model UI. The DOM represents HTML elements, the CSSOM does the same for CSS. There’s even an Accessibility tree!
+
+    // React also uses tree structures to manage and model the UI you make. React makes UI trees from your JSX. Then React DOM updates the browser DOM elements to match that UI tree. (React Native translates these trees into elements specific to mobile platforms.)
+
+    // When you give a component state, you might think the state “lives” inside the component. But the state is actually held inside React. React associates each piece of state it’s holding with the correct component by where that component sits in the UI tree.
+
+    // React will keep the state around for as long as you render the same component at the same position. To see this, increment both counters, then remove the second component by unchecking “Render the second counter” checkbox, and then add it back by ticking it again:
+
+    // -------------!!!!!!!!!VERY IMPORTANT!!!!!!!!!!!!!!------------ 
+    // Notice how the moment you stop rendering the second counter, its state disappears completely. That’s because when React removes a component, it destroys its state.
+    // React preserves a component’s state for as long as it’s being rendered at its position in the UI tree. If it gets removed, or a different component gets rendered at the same position, React discards its state.
+
+    // Same component at the same position preserves state.
+    // Remember that it’s the position in the UI tree—not in the JSX markup—that matters to React!
+
+    // Different components at the same position reset state 
+    
+    // RULE:-
+          // As a rule of thumb, if you want to preserve the state between re-renders, the structure of your tree needs to “match up” from one render to another. If the structure is different, the state gets destroyed because React destroys state when it removes a component from the tree.
+          // Always declare component functions at the top level, and don’t nest their definitions.
+
+    // Ways to reset state
+    // 1. Using different positions for same component
+    // 2. Using keys for components 
+
+    // Recap
+      // React keeps state for as long as the same component is rendered at the same position.
+      // State is not kept in JSX tags. It’s associated with the tree position in which you put that JSX.
+      // You can force a subtree to reset its state by giving it a different key.
+      // Don’t nest component definitions, or you’ll reset state by accident.
