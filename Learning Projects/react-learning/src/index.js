@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import PreservingState from './PreservingAndResettingState_ManagingState/PreservingState';
+import SimpleReducer from './ExtractingStateLogicIntoAReducer_ManagingState/SimpleReducer';
+// import ChatMessenger from './ExtractingStateLogicIntoAReducer_ManagingState/ChatMessengerWIthUsingreducer/ChatMessanger';
+// import TodoListUsingReducer from './ExtractingStateLogicIntoAReducer_ManagingState/TaskListUsingReducer';
+// import TodoList from './ExtractingStateLogicIntoAReducer_ManagingState/TaskList';
+// import PreservingState from './PreservingAndResettingState_ManagingState/PreservingState';
 // import Accordion from './SharingStateBetweenComponents/Accordion';
 // import MailClient from './ManagingState-Intermediate/FixthedisappearingselectionChallange';
 // import TravelPlan from './ManagingState-Intermediate/AvoidDeeplyNestesState';
@@ -77,7 +81,11 @@ root.render(
     {/* <TravelPlan /> */}
     {/* <MailClient /> */}
     {/* <Accordion /> */}
-    <PreservingState />
+    {/* <PreservingState /> */}
+    {/* <TodoList /> */}
+    {/* <TodoListUsingReducer /> */}
+    {/* <ChatMessenger /> */}
+    <SimpleReducer />
     
   </React.StrictMode>
 );

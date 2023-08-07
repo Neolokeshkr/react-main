@@ -46,7 +46,7 @@ export default function ArrayStateComponent() {
                         {item.name}
                         <button onClick={() => {
                             setArrayState(
-                                arrayState.filter(ele => ele.id !== item.id)
+                                arrayState.filter(ele => ele.id === item.id)
                             )
                         }}>
                             Delete

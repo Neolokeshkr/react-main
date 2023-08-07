@@ -511,3 +511,78 @@
       // State is not kept in JSX tags. It’s associated with the tree position in which you put that JSX.
       // You can force a subtree to reset its state by giving it a different key.
       // Don’t nest component definitions, or you’ll reset state by accident.
+
+/* ================================================================================================================================== */
+// Consolidate state logic with a reducer 
+
+  // Reducers are a different way to handle state. You can migrate from useState to useReducer in three steps
+    // Move from setting state to dispatching actions.
+    // Write a reducer function.
+    // Use the reducer from your component.
+
+
+  // Step 1: Move from setting state to dispatching actions 
+    // Managing state with reducers is slightly different from directly setting state. Instead of telling React “what to do” by setting state, you specify “what the user just did” by dispatching “actions” from your event handlers. 
+
+    function handleAddTask(text) {
+      dispatch({
+        type: 'added',
+        id: nextId++,
+        text: text,
+      });
+    }
+    
+    function handleChangeTask(task) {
+      dispatch({
+        type: 'changed',
+        task: task,
+      });
+    }
+    
+    function handleDeleteTask(taskId) {
+      dispatch({
+        type: 'deleted',
+        id: taskId,
+      });
+    }
+  
+    // The object you pass to dispatch is called an “action”:
+
+    // An action object can have any shape.
+      // By convention, it is common to give it a string type that describes what happened, and pass any additional information in other fields. The type is specific to a component, so in this example either 'added' or 'added_task' would be fine. Choose a name that says what happened!
+
+  // Step 2: Write a reducer function 
+    // A reducer function is where you will put your state logic. It takes two arguments, the current state and the action object, and it returns the next state:
+                function yourReducer(state, action) {
+                  // return next state for React to set
+                }
+
+        // React will set the state to what you return from the reducer.
+          //  To move your state setting logic from your event handlers to a reducer function in this example, you will:
+            // Declare the current state (tasks) as the first argument.
+            // Declare the action object as the second argument.
+            // Return the next state from the reducer (which React will set the state to).
+  // Step 3: Step 3: Use the reducer from your component 
+
+      // Finally, you need to hook up the tasksReducer to your component. Import the useReducer Hook from React:
+
+          import { useReducer } from 'react';
+
+      //  Then you can replace useState:
+
+          const [tasks, setTasks] = useState(initialTasks);
+
+      // with useReducer like so:
+
+          const [tasks, dispatch] = useReducer(tasksReducer, initialTasks);
+
+
+  // Recap
+      // To convert from useState to useReducer:
+          // Dispatch actions from event handlers.
+          // Write a reducer function that returns the next state for a given state and action.
+          // Replace useState with useReducer.
+      // Reducers require you to write a bit more code, but they help with debugging and testing.
+      // Reducers must be pure.
+      // Each action describes a single user interaction.
+      // Use Immer if you want to write reducers in a mutating style.
