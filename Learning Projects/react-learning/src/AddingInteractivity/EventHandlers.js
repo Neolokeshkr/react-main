@@ -5,11 +5,15 @@ export function EventHandlers() {
     }
 
     function handleMouseEnter(){
-        alert('Cursour on button');
+        console.log('Cursour on button');
+    }
+
+    function handleMouseOver(e){
+        console.log('Hover');
     }
 
     return(
-        <button onClick={handleClick} onMouseEnter={handleMouseEnter}>Click Me!</button>
+        <button onClick={handleClick} onMouseEnter={handleMouseEnter} onMouseOver={handleMouseOver}>Click Me!</button>
 
         // <button onClick={function handleClick() {
         //     alert('You clicked me!');
@@ -32,6 +36,8 @@ function AlertButton({message, children}) {
         </button>
     )
 }
+
+
 
 export function Toolbar() {
     return (

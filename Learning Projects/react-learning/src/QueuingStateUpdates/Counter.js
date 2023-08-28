@@ -10,9 +10,9 @@ export default function Counter(){
           // During the next render, React goes through the queue and gives you the final updated state.
 
     function increment(){
-        setCounter(counter + 1);     // updater Function
-        setCounter(counter + 1);     // updater Function
-        setCounter(counter + 1);     // updater Function
+        setCounter(counter => counter + 1);     // updater Function
+        setCounter(counter => counter + 1);     // updater Function
+        setCounter(counter => counter + 1);     // updater Function
     }
 
     function decrement(){

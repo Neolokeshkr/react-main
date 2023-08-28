@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import SimpleReducer from './ExtractingStateLogicIntoAReducer_ManagingState/SimpleReducer';
+// import SimpleReducer from './ExtractingStateLogicIntoAReducer_ManagingState/SimpleReducer';
 // import ChatMessenger from './ExtractingStateLogicIntoAReducer_ManagingState/ChatMessengerWIthUsingreducer/ChatMessanger';
-// import TodoListUsingReducer from './ExtractingStateLogicIntoAReducer_ManagingState/TaskListUsingReducer';
+import TodoListUsingReducer from './ExtractingStateLogicIntoAReducer_ManagingState/TaskListUsingReducer';
 // import TodoList from './ExtractingStateLogicIntoAReducer_ManagingState/TaskList';
 // import PreservingState from './PreservingAndResettingState_ManagingState/PreservingState';
 // import Accordion from './SharingStateBetweenComponents/Accordion';
@@ -57,10 +57,13 @@ root.render(
     {/* <Profile /> */}
     {/* <PassingJSX /> */}
     {/* <PeopleList /> */}
-    {/* <EventHandlers /> */}
-    {/* <Toolbar /> */}
-    {/* <PassingEventhandlersAsProps /> */}
+
+    {/* <EventHandlers />
+    <Toolbar />
+    <PassingEventhandlersAsProps />
+    <EventPropagation /> */}
     {/* <SculptureGallery />
+
     <SculptureGallery /> */}
 
     {/* <Counter /> */}
@@ -83,9 +86,9 @@ root.render(
     {/* <Accordion /> */}
     {/* <PreservingState /> */}
     {/* <TodoList /> */}
-    {/* <TodoListUsingReducer /> */}
+    <TodoListUsingReducer />
     {/* <ChatMessenger /> */}
-    <SimpleReducer />
+    {/* <SimpleReducer /> */}
     
   </React.StrictMode>
 );

@@ -49,6 +49,12 @@
                 // 1.2 Using Fragments <>...</> -> This empty tag is called a Fragment. Fragments let you group things without leaving any trace in the browser HTML tree.
 
                 // 1.3 You can’t return two objects from a function without wrapping them into an array. This explains why you also can’t return two JSX tags without wrapping them into another tag or a Fragment.
+                            function retTwoObjects(){
+                                let obj1 = {name:'Lokesh'}
+                                let obj2 = {age : 27}
+                                // if two objects are returned without enclosing them in array, it produces Syntax Error: Uxexpected identifier.
+                                return [obj1, obj2]
+                            }
              
             // 2. Close all the tags
                 // 2.1 JSX requires to be explicitly closed: self closing <img> must become <img/> and wrapping tags like <li>oranges must become <li>oranges</li>
@@ -56,7 +62,7 @@
             // 3. camelCase all most of the things! 
                 // 3.1 JSX turns into JavaScript and attributes written in JSX become keys of JavaScript objects.
 
-                // 3.2 Attributes like : stroke-width becomes stroeWidth and class becomes className
+                // 3.2 Attributes like : stroke-width becomes strokeWidth and class becomes className
 
 // 5.   JavaScript in JSX with Curly Braces
         // 5.1 Passing strings with quotes:
@@ -84,7 +90,7 @@
 // 6. Passing props to a component
     // React components pass props to communicate with each other.
     // Every parent component can pass information to its child component by giving them props.
-    // A component may receive different props over time, props are not static but they are imulateble.
+    // A component may receive different props over time, props are not static but they are immutable.
     // One shouldnot change the props explictily they must be updated using the setState()
     // You can forward all props with <Avatar {...props} /> JSX spread syntax, but don’t overuse it!
     // Nested JSX like <Card><Avatar /></Card> will appear as Card component’s children prop.
@@ -109,7 +115,6 @@
     // 3. See if you are repeating variables in logic.
 
 // Rendering Lists
-    // Keeping list items in order with key Keeping list items in order with key 
         // 1. You need to give each array item a key — a string or a number that uniquely identifies it among other items in that array:
             <li key={person.id}>...</li>
 
@@ -277,7 +282,7 @@
       // 1. State is local to a component instance on the screen. In other words, if you render the same component twice, each copy will have completely isolated state! Changing one of them will not affect the other.
       // 2. Unlike props, state is fully private to the component declaring it. 
 
-  // Q. How to share stare between two components?
+  // Q. How to share state between two components?
   // A. The right way to do it in React is to remove state from child components and add it to their closest shared parent.
 
 // Rendering and Commiting
@@ -441,7 +446,7 @@
     // If the state is too nested to update easily, consider making it “flat”.
     // Here is one way you can restructure this data. Instead of a tree-like structure where each place has an array of its child places, you can have each place hold an array of its child place IDs.
             
-// Chhosing STate Structure
+// Choosing State Structure
   // If two state variables always update together, consider merging them into one.
   // Choose your state variables carefully to avoid creating “impossible” states.
   // Structure your state in a way that reduces the chances that you’ll make a mistake updating it.
